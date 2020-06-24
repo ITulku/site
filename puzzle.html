@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+		var score = 0;
+
+		function checkAnswer(inputId, answers){
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(var i = 0; i < answers.length; i++){
+				if(userAnswer == answers[i]){
+					score++;
+					break;
+				}
+			}
+		}
+		
+		function checkAnswers() {
+
+			checkAnswer("userAnswer1", ["компьютер"]);
+			checkAnswer("userAnswer2", ["интернет"]);
+			checkAnswer("userAnswer3", ["джойстик"]);
+
+			alert("Вы отгадали " + score + " загадки");
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="puzzle.html">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра в загадки</h1>
+
+			<div class="box">
+
+				<p>Что за друг такой ­железный,интересный и полезный?
+				<p>Дома скучно, нет уюта,если выключен…
+				<input type="text" id="userAnswer1">
+
+				<p>Сетевая паутина оплела весь белый свет, 
+				<p>не пройти детишкам мимо. Что же это…
+				<input type="text" id="userAnswer2">
+
+				<p>Если я в игру играю, то на кнопки нажимаю.
+				<p>Кнопки, рычаги и хвостик…Догадались? Это…
+				<input type="text" id="userAnswer3">
+
+
+				<br>
+				<a href="#" onClick="checkAnswers();">Ответить</a>
+
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; ITulku
+<div>
+
+
+</body>
+</html>
