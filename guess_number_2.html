@@ -39,13 +39,13 @@
 		var userAnswer = readInt("input");
 		write("Эй, не спи!. Игрок " + playerNumber + ", введи цыферки еще раз.");
 		if(userAnswer == answer) {
-			write("ПОБЕДА! Игрок" + playerNumber + " - ты потрясающий!");
+			write("ПОБЕДА! Игрок " + playerNumber + " - ты потрясающий!");
 			hide("button");
 			hide("input");
 		} else if(userAnswer < answer) {
 			changePlayer(playerNumber);
 			clear("input");
-			write("А вот и нет, маловато будет.<br>Игрок " + playerNumber + " твой ход.");
+			write("А вот и нет, маловато будет.<br>Игрок " + playerNumber + " ,твой ход.");
 		} else if(userAnswer > answer){
 			changePlayer(playerNumber);
 			clear("input");
