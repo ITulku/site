@@ -37,7 +37,7 @@
 	</div>
 </div>
 <div class="footer">
-	Copyright &copy; ITulku
+	Copyright &copy; <?php echo date "Y";?>  ITulku
 <div>
 
 

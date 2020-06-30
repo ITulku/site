@@ -35,13 +35,9 @@
 <body>
 
 <div class="content">
-	<div class="header">
-		<a href="index.html">Главная</a>
-		<a href="riddles.html">Загадки</a>
-		<a href="guess_number.html">Угадай число</a>
-		<a href="guess_number_2.html">Угадай число: сыграйте вдвоём</a>
-		<a href="pwgen.html">Генератор паролей</a>
-	</div>
+	<?php 
+include "menu.php";
+?>	
 
 <div class="contentWrap">
     <div class="content">
@@ -65,7 +61,7 @@
 
 </div>
 <div class="footer">
-	Copyright &copy; ITulku
+	Copyright &copy; <?php echo date "Y";?> ITulku
 <div>
 
 
