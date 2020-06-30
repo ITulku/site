@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">
+
+		var answer = parseInt(Math.random()*100);
+		var playerNumber = 1;
+
+	function readInt(id){
+		var number = document.getElementById(id).value;
+		return parseInt(number);
+	}
+
+	function write(text){
+		document.getElementById("info").innerHTML = text;
+	}
+
+	function hide(id) {
+		document.getElementById(id).style.display = "none";
+	}
+
+	function changePlayer(player) {
+		if(player == 1) {
+			player = 2;
+		} else {
+			player = 1;
+		}
+		playerNumber = player;
+	}
+
+	function clear(id) {
+		document.getElementById(id).value = "";
+	}
+
+	function guess(){
+		var userAnswer = readInt("input");
+		write("Эй, не спи!. Игрок " + playerNumber + ", введи цыферки еще раз.");
+		if(userAnswer == answer) {
+			write("ПОБЕДА! Игрок" + playerNumber + " - ты потрясающий!");
+			hide("button");
+			hide("input");
+		} else if(userAnswer < answer) {
+			changePlayer(playerNumber);
+			clear("input");
+			write("А вот и нет, маловато будет.<br>Игрок " + playerNumber + " твой ход.");
+		} else if(userAnswer > answer){
+			changePlayer(playerNumber);
+			clear("input");
+			write("Мимо - загаданное число меньше.<br>Игрок " + playerNumber + " , попробуй угадать!");
+		}
+	}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="riddles.html">Загадки</a>
+		<a href="guess_number.html">Угадай число</a>
+		<a href="guess_number_2.html">Угадай число: сыграйте вдвоём</a>
+		<a href="pwgen.html">Генератор паролей</a>
+	</div>
+
+<div class="contentWrap">
+    <div class="content">
+        <div class="center">
+
+			<h1>Игра <br>Угадай число: сыграйте вдвоём</h1>
+
+			<div class="box">
+
+				<p id="info">Система загадала целоe число от 1 до 100. Игрок 1,твой вариант.</p>
+				<input type="text" id="input">
+				<br>
+				<a href="#" onClick="guess();" id="button">Начать</a>				
+			</div>
+
+        </div>
+    </div>
+</div>
+
+	
+
+</div>
+<div class="footer">
+	Copyright &copy; ITulku
+<div>
+
+
+</body>
+</html>
